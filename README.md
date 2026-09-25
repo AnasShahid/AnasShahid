@@ -16,7 +16,7 @@
 
 I lead it, architect it, and ship it. Twelve years building enterprise, fintech, and AI-driven products — holding technical leadership, client-facing delivery, and the software principles that keep systems maintainable after launch.
 
-Currently co-founder at SociiLabs, leading a distributed team that shipped 8 products in one year on an AI-native SDLC framework of my own design. Before that, Senior Technical Lead at Nisum: agentic systems for Albertsons, enterprise account growth, and full-stack delivery across .NET, Angular, React, and Node — always grounded in clear architecture and deliberate design patterns.
+Currently at SociiLabs,I am leading a distributed team that shipped 8 products in one year on an AI-native SDLC framework of my own design. Before that, Senior Technical Lead at Nisum: agentic systems, enterprise account growth, and full-stack delivery across .NET, Angular, React, and Node — always grounded in clear architecture and deliberate design patterns.
 
 I use AI where it moves real work: agents that open tickets and fire pipelines, copilots that turn briefs into priced proposals, and LLMOps that survive production — not slideware.
 
@@ -27,11 +27,6 @@ I use AI where it moves real work: agents that open tickets and fire pipelines, 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=ts,react,angular,vue,nextjs,nodejs,nestjs,python,dotnet,express,postgres,mongodb,redis,graphql,docker,gcp,aws,azure,terraform,git,github,vscode,postman,jest&perline=8&theme=dark" alt="TypeScript, React, Angular, Vue, Next.js, Node.js, NestJS, Python, .NET, Express, PostgreSQL, MongoDB, Redis, GraphQL, Docker, GCP, AWS, Azure, Terraform, Git, GitHub, VS Code, Postman, Jest">
 </p>
-
-
-
-
-
 
 
 
@@ -49,7 +44,7 @@ I use AI where it moves real work: agents that open tickets and fire pipelines, 
 
 | | | |
 |---|---|---|
-| **ADA** | Agentic AI assistant for Albertsons. Cut cross-team intake by up to 80% and onboarding from 4 weeks to 1 — including agents that create JIRA stories and trigger deploys. | `LangChain` `LangGraph` `RAG` `LLMOps` |
+| **ADA** | Agentic AI assistant for US retail giant. Cut cross-team intake by up to 80% and onboarding from 4 weeks to 1 — including agents that create JIRA stories and trigger deploys. | `LangChain` `LangGraph` `RAG` `LLMOps` |
 | **Zapbook** | Venue booking platform rebuilt from 5-year-old tech debt to modern GCP in 63 days — 9 releases, 300+ tasks, zero downtime. | `GCP` `Full-stack` |
 | **Prophic AI** | Pre-sales copilot that turns client briefs into priced, branded proposals in minutes. | `AI Agents` `LLM` |
 | **HELM** | Two-sided hospitality marketplace — booking and pricing engine, payments/payouts, role-based access — architected end-to-end. | `Marketplace` `Payments` |
