@@ -358,8 +358,10 @@
   .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:8px}
   .ccard{border:1px solid var(--line);background:var(--surface);padding:18px;text-decoration:none;display:block;transition:border-color .15s}
   .ccard:hover{border-color:var(--accent)}
-  .ccard dt{font-family:var(--f-mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
-  .ccard dd{margin:7px 0 0;font-size:14.5px;font-weight:550;word-break:break-word}
+  .ccard dt,.ccard-k{display:block;font-family:var(--f-mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+  .ccard dd,.ccard-v{display:block;margin:7px 0 0;font-size:14.5px;font-weight:550;word-break:break-word}
+  button.ccard{width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer}
+  button.ccard .ccard-k em{font-style:normal;color:var(--signal)}
   .foot{
     border-top:1px solid var(--line);padding-block:26px 40px;
     display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;
@@ -415,7 +417,6 @@
     </div>
     <div class="cta">
       <a class="btn btn-primary" href="https://cal.com/anas-shahid-0ksmbw/30min" target="_blank" rel="noopener">Book a 30-min call</a>
-      <a class="btn" href="mailto:anasshahid88@gmail.com">Email</a>
       <a class="btn" href="https://linkedin.com/in/anasshahid88" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn" href="https://github.com/AnasShahid" target="_blank" rel="noopener">GitHub</a>
       <a class="btn" href="/AnasShahid.pdf">Résumé (PDF)</a>
@@ -991,9 +992,10 @@
         <a class="ccard" href="https://cal.com/anas-shahid-0ksmbw/30min" target="_blank" rel="noopener">
           <dt>Book a call</dt><dd>30 minutes, pick a slot</dd>
         </a>
-        <a class="ccard" href="mailto:anasshahid88@gmail.com">
-          <dt>Email</dt><dd>anasshahid88@gmail.com</dd>
-        </a>
+        <button class="ccard" type="button" id="copy-email" data-email="anasshahid88@gmail.com">
+          <span class="ccard-k">Email <em hidden>— copied</em></span>
+          <span class="ccard-v">anasshahid88@gmail.com</span>
+        </button>
         <a class="ccard" href="https://linkedin.com/in/anasshahid88" target="_blank" rel="noopener">
           <dt>LinkedIn</dt><dd>in/anasshahid88</dd>
         </a>
@@ -1048,6 +1050,30 @@
         if (body) body.hidden = open;
       });
     });
+
+    /* copy email to clipboard */
+    var copyBtn = document.getElementById('copy-email');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function () {
+        var mark = copyBtn.querySelector('em');
+        var addr = copyBtn.dataset.email;
+        var done = function () {
+          if (!mark) return;
+          mark.hidden = false;
+          setTimeout(function () { mark.hidden = true; }, 1800);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(addr).then(done, function () {});
+        } else {
+          var t = document.createElement('textarea');
+          t.value = addr;
+          document.body.appendChild(t);
+          t.select();
+          try { document.execCommand('copy'); done(); } catch (e) {}
+          document.body.removeChild(t);
+        }
+      });
+    }
 
     /* domain filter */
     var chips = document.querySelectorAll('.chip');
